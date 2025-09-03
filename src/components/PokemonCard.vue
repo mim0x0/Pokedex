@@ -1,5 +1,6 @@
 <script setup>
 import { useRouter } from 'vue-router'
+import { computed } from 'vue'
 const props = defineProps({ pokemon: { type: Object, required: true } })
 const router = useRouter()
 const open = () => router.push(`/pokemon/${encodeURIComponent(props.pokemon.name)}`)
@@ -7,7 +8,7 @@ const open = () => router.push(`/pokemon/${encodeURIComponent(props.pokemon.name
 
 <template>
   <div class="col">
-    <div class="card h-100 shadow-sm border-0" role="button" @click="open">
+    <div class="card h-100 shadow-sm" role="button" @click="open">
       <img
         v-if="pokemon.image"
         :src="pokemon.image"

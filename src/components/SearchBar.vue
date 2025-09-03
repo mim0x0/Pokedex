@@ -7,7 +7,7 @@ defineEmits(['update:modelValue'])
   <div class="mb-3">
     <input
       type="text"
-      class="form-control form-control-lg"
+      class="form-control form-control-lg searchBar"
       placeholder="Search Pokemon by name…"
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"

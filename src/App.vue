@@ -7,7 +7,7 @@ const goHome = () => router.push('/')
 
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-transparent">
       <div class="container">
         <a class="navbar-brand fw-bold mx-auto" href="#" @click.prevent="goHome"
           ><strong>Pokedex</strong></a
@@ -43,7 +43,7 @@ const goHome = () => router.push('/')
     <footer class="py-4 text-center text-muted">
       <small
         ><a class="nav-link" href="https://pokeapi.co" target="_blank" rel="noreferrer"
-          >PokeAPI</a
+          >Powered by <strong>PokeAPI</strong></a
         ></small
       >
     </footer>

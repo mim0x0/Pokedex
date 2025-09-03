@@ -10,6 +10,8 @@ export const usePokemonStore = defineStore('pokemon', {
     error: null,
     search: '',
     edits: {},
+    currentPage: 1,
+    pageSize: 20,
   }),
   persist: true,
   getters: {
@@ -31,6 +33,13 @@ export const usePokemonStore = defineStore('pokemon', {
       const base = state.items.find((p) => p.name === name)
       if (!base) return null
       return { ...base, ...(state.edits[name] || {}) }
+    },
+    paginated(state) {
+      const start = (state.currentPage - 1) * state.pageSize
+      return this.filtered.slice(start, start + state.pageSize)
+    },
+    totalPages(state) {
+      return Math.ceil(this.filtered.length / state.pageSize)
     },
   },
   actions: {
@@ -57,8 +66,8 @@ export const usePokemonStore = defineStore('pokemon', {
             }
           }),
         )
-        // Sort alphabetically
         this.items = details.sort((a, b) => a.name.localeCompare(b.name))
+        this.currentPage = 1
       } catch (e) {
         this.error = e?.message || 'Failed to load Pokemon.'
       } finally {
