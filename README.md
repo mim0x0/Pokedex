@@ -1,29 +1,61 @@
 # Pokedex
 
-This template should help get you started developing with Vue 3 in Vite.
+A simple responsive Pokédex web app built with Vue 3, Pinia, and Bootstrap 5.3.
+This app fetches data from the [PokeAPI](https://pokeapi.co/) and allows you to:
 
-## Recommended IDE Setup
+- Browse the first 100 Pokémon in a responsive grid layout
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- View Pokemon name, image, and key info (types, height, weight, base XP)
 
-## Customize configuration
+- Search/filter Pokemon by name
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- Click a Pokemon to view a detailed page (abilities, stats, etc.)
+
+- Edit Pokemon info (nickname, notes, favorite flag) — edits are stored in Pinia persisted state
+
+- Responsive design that works across devices
+
+- Shows a pokeball loading spinner while fetching data
+
+## Tech Stack
+
+- [Vue 3](https://vuejs.org/)
+- [Pinia](https://pinia.vuejs.org/)
+- [Bootstrap 5.3](https://getbootstrap.com/)
+- [Vite](https://vite.dev/)
+
+## Live Demo
+
+[Hosted on GitHub Pages](https://mim0x0.github.io/Pokedex/).
 
 ## Project Setup
+
+Clone the repo:
+
+```sh
+git clone https://github.com/mim0x0/Pokedex.git
+cd Pokedex
+```
+
+File D:\FYP\Node.js\npm.ps1 cannot be loaded because running scripts is disabled on this system, use this command:
+
+```sh
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+
+Install dependencies:
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+Run locally:
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Future improvements
 
-```sh
-npm run build
-```
+- Improve Design
+- Add type-based filter
