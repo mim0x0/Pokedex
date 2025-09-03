@@ -7,7 +7,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue(), vueDevTools()],
-  base: 'https://mim0x0.github.io/Pokedex/',
+  base: '/Pokedex/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
